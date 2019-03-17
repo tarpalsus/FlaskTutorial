@@ -11,6 +11,7 @@ def send_email(subject, sender, recipients, text_body, html_body):
     with app.app_context():
         mail.send(msg)
 
+
 def send_password_reset_email(user):
     token = user.get_reset_password_token()
     send_email('Blog Reset your Password',
