@@ -7,3 +7,5 @@ flask-moment
 jwt
 flask_wtf
 flask-babel
+guess_language-spirit
+requests

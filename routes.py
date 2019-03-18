@@ -8,6 +8,7 @@ from app.forms import LoginForm, RegistrationForm, EditProfileForm, PostForm, Re
 from app.models import Post
 from app.emails import send_password_reset_email
 from app import db
+from guess_language import guess_language
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -16,7 +17,11 @@ from app import db
 def index():
     form = PostForm()
     if form.validate_on_submit():
-        post = Post(body=form.post.data, author=current_user)
+        language = guess_language(form.post.data)
+        if language == 'UNKNOWN' or len(language) > 5:
+            language = ''
+
+        post = Post(body=form.post.data, author=current_user, language=language)
         db.session.add(post)
         db.session.commit()
         flash('Your post has been submitted')
@@ -187,3 +192,14 @@ def reset_password(token):
         flash('Password changed')
         return redirect(url_for('login'))
     return render_template('reset_password.html', form=form)
+
+from flask import jsonify
+from app.translate import translate
+
+
+@app.route('/translate', methods=['POST'])
+@login_required
+def translate_text():
+    return jsonify({'text': translate(request.form['text'],
+                                      request.form['source_language'],
+                                      request.form['dest_language'])})
