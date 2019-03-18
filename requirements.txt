@@ -6,3 +6,4 @@ flask-mail
 flask-moment
 jwt
 flask_wtf
+flask-babel
