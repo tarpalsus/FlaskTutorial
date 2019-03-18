@@ -1,2 +1,59 @@
-2019-03-18 19:27:41,371 INFO: Microblog startup [in C:\Users\Maciek\PycharmProjects\flask-tutorial\app\__init__.py:36]
-2019-03-18 19:28:16,392 INFO: Microblog startup [in C:\Users\Maciek\PycharmProjects\flask-tutorial\app\__init__.py:36]
+2019-03-18 21:51:29,818 ERROR: Exception on /index [GET] [in c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\sqlalchemy\engine\base.py", line 1236, in _execute_context
+    cursor, statement, parameters, context
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\sqlalchemy\engine\default.py", line 536, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: followers
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\Maciek\PycharmProjects\FlaskTutorial\app\routes.py", line 31, in index
+    page, app.config['POSTS_PER_PAGE'], False
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\flask_sqlalchemy\__init__.py", line 491, in paginate
+    items = self.limit(per_page).offset((page - 1) * per_page).all()
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\sqlalchemy\orm\query.py", line 2925, in all
+    return list(self)
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\sqlalchemy\orm\query.py", line 3081, in __iter__
+    return self._execute_and_instances(context)
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\sqlalchemy\orm\query.py", line 3106, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\sqlalchemy\engine\base.py", line 980, in execute
+    return meth(self, multiparams, params)
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\sqlalchemy\sql\elements.py", line 273, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\sqlalchemy\engine\base.py", line 1099, in _execute_clauseelement
+    distilled_params,
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\sqlalchemy\engine\base.py", line 1240, in _execute_context
+    e, statement, parameters, cursor, context
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\sqlalchemy\engine\base.py", line 1458, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\sqlalchemy\util\compat.py", line 296, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\sqlalchemy\util\compat.py", line 276, in reraise
+    raise value.with_traceback(tb)
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\sqlalchemy\engine\base.py", line 1236, in _execute_context
+    cursor, statement, parameters, context
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\sqlalchemy\engine\default.py", line 536, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: followers [SQL: 'SELECT anon_1.post_id AS anon_1_post_id, anon_1.post_body AS anon_1_post_body, anon_1.post_timestamp AS anon_1_post_timestamp, anon_1.post_user_id AS anon_1_post_user_id, anon_1.post_language AS anon_1_post_language \nFROM (SELECT post.id AS post_id, post.body AS post_body, post.timestamp AS post_timestamp, post.user_id AS post_user_id, post.language AS post_language \nFROM post JOIN followers ON followers.followed_id = post.user_id \nWHERE followers.follower_id = ? UNION SELECT post.id AS post_id, post.body AS post_body, post.timestamp AS post_timestamp, post.user_id AS post_user_id, post.language AS post_language \nFROM post \nWHERE post.user_id = ?) AS anon_1 ORDER BY anon_1.post_timestamp DESC\n LIMIT ? OFFSET ?'] [parameters: (1, 1, 25, 0)] (Background on this error at: http://sqlalche.me/e/e3q8)
+2019-03-18 21:52:02,072 INFO: Microblog startup [in C:\Users\Maciek\PycharmProjects\FlaskTutorial\app\__init__.py:36]
+2019-03-18 21:52:11,263 INFO: Microblog startup [in C:\Users\Maciek\PycharmProjects\FlaskTutorial\app\__init__.py:36]
+2019-03-18 21:52:24,774 INFO: Microblog startup [in C:\Users\Maciek\PycharmProjects\FlaskTutorial\app\__init__.py:36]
+2019-03-18 21:52:36,872 INFO: Microblog startup [in C:\Users\Maciek\PycharmProjects\FlaskTutorial\app\__init__.py:36]
+2019-03-18 21:52:46,546 INFO: Microblog startup [in C:\Users\Maciek\PycharmProjects\FlaskTutorial\app\__init__.py:36]
