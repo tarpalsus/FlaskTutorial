@@ -1,0 +1,126 @@
+2019-03-16 13:07:10,485 ERROR: Exception on /index [GET] [in c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\Maciek\PycharmProjects\app\routes.py", line 25, in index
+    page, app.config(['POSTS_PER_PAGE']), False
+TypeError: 'Config' object is not callable
+2019-03-16 13:07:30,755 ERROR: Exception on /index [GET] [in c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\Maciek\PycharmProjects\app\routes.py", line 25, in index
+    page, app.config['POSTS_PER_PAGE'], False
+TypeError: 'Config' object is not callable
+2019-03-16 13:07:38,085 INFO: Microblog startup [in C:\Users\Maciek\PycharmProjects\app\__init__.py:27]
+2019-03-16 13:07:39,281 ERROR: Exception on /index [GET] [in c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\Maciek\PycharmProjects\app\routes.py", line 27, in index
+    return render_template('index.html', title='Home', form=form, posts=posts)
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Maciek\PycharmProjects\app\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\Maciek\PycharmProjects\app\templates\base.html", line 32, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Users\Maciek\PycharmProjects\app\templates\index.html", line 18, in block "content"
+    {% for post in posts %}
+TypeError: 'Pagination' object is not iterable
+2019-03-16 13:08:48,181 INFO: Microblog startup [in C:\Users\Maciek\PycharmProjects\app\__init__.py:27]
+2019-03-16 13:13:40,451 INFO: Microblog startup [in C:\Users\Maciek\PycharmProjects\app\__init__.py:27]
+2019-03-16 13:18:19,854 INFO: Microblog startup [in C:\Users\Maciek\PycharmProjects\app\__init__.py:27]
+2019-03-17 19:01:46,498 INFO: Microblog startup [in C:\Users\Maciek\PycharmProjects\app\__init__.py:29]
+2019-03-17 19:03:22,357 ERROR: Exception on /reset_password_request [GET] [in c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Maciek\PycharmProjects\app\routes.py", line 170, in reset_password_request
+    title='Reset Password', form=form)
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\flask\templating.py", line 134, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\jinja2\environment.py", line 869, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\jinja2\environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\jinja2\environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\jinja2\loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\flask\templating.py", line 58, in get_source
+    return self._get_source_fast(environment, template)
+  File "c:\users\maciek\anaconda3\envs\webdev\lib\site-packages\flask\templating.py", line 86, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: reset_password.request.html
+2019-03-17 19:05:16,808 INFO: Microblog startup [in C:\Users\Maciek\PycharmProjects\app\__init__.py:29]
+2019-03-17 19:21:57,718 INFO: Microblog startup [in C:\Users\Maciek\PycharmProjects\app\__init__.py:31]
+2019-03-17 19:31:14,009 INFO: Microblog startup [in C:\Users\Maciek\PycharmProjects\app\__init__.py:33]
+2019-03-18 17:41:43,649 INFO: Microblog startup [in C:\Users\Maciek\PycharmProjects\app\__init__.py:36]
+2019-03-18 17:41:48,787 INFO: Microblog startup [in C:\Users\Maciek\PycharmProjects\app\__init__.py:36]
+2019-03-18 17:41:53,567 INFO: Microblog startup [in C:\Users\Maciek\PycharmProjects\app\__init__.py:36]
+2019-03-18 17:42:26,889 INFO: Microblog startup [in C:\Users\Maciek\PycharmProjects\app\__init__.py:36]
+2019-03-18 17:43:04,342 INFO: Microblog startup [in C:\Users\Maciek\PycharmProjects\app\__init__.py:36]
+2019-03-18 17:43:41,021 INFO: Microblog startup [in C:\Users\Maciek\PycharmProjects\app\__init__.py:36]
+2019-03-18 17:43:53,658 INFO: Microblog startup [in C:\Users\Maciek\PycharmProjects\app\__init__.py:36]
+2019-03-18 17:44:00,344 INFO: Microblog startup [in C:\Users\Maciek\PycharmProjects\app\__init__.py:36]
+2019-03-18 17:44:05,909 INFO: Microblog startup [in C:\Users\Maciek\PycharmProjects\app\__init__.py:36]
+2019-03-18 17:44:28,327 INFO: Microblog startup [in C:\Users\Maciek\PycharmProjects\app\__init__.py:36]
+2019-03-18 17:44:35,682 INFO: Microblog startup [in C:\Users\Maciek\PycharmProjects\app\__init__.py:36]
+2019-03-18 17:44:45,464 INFO: Microblog startup [in C:\Users\Maciek\PycharmProjects\app\__init__.py:36]
+2019-03-18 17:45:59,216 INFO: Microblog startup [in C:\Users\Maciek\PycharmProjects\app\__init__.py:36]
+2019-03-18 17:46:09,122 INFO: Microblog startup [in C:\Users\Maciek\PycharmProjects\app\__init__.py:36]
