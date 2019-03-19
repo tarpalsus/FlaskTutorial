@@ -9,3 +9,5 @@ flask_wtf
 flask-babel
 guess_language-spirit
 requests
+python-dotenv
+elasticsearch
